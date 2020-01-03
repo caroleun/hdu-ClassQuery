@@ -55,7 +55,7 @@ class QueryClass:
             for j in range(2, number_of_td):
                 dct[td_0[j].text] = tds[j].text.strip()
             class_list.append(dct)
-        QueryClass.save_json(class_list, 'test/class.json')
+        QueryClass.save_json(class_list, 'class.json')
         return class_list
 
     @staticmethod
@@ -65,7 +65,7 @@ class QueryClass:
 
     @staticmethod
     def get_reference_url(module_url: str):
-        match_obj = re.search('xm=(.+?', module_url)
+        match_obj = re.search('xm=(.+)', module_url)
         string_source = match_obj.group(1)
         url_quote = module_url.replace(string_source, quote(string_source))
         return url_quote

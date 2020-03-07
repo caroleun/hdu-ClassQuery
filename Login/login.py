@@ -77,7 +77,7 @@ class Login:
             # 'Content-Length': '333',
             # 'Connection': 'keep-alive',
             # 'Referer': 'http://cas.hdu.edu.cn/cas/login?service=http://jxgl.hdu.edu.cn/default.aspx',
-            # 'Cookie': 'JSESSIONID=A079B99CABFA97A210885928DB40A053; Language=zh_CN',
+
             # 'Upgrade-Insecure-Requests': '1'
         }
         response = self.session.post(self.url, data=self.dataForm, headers=post_headers, allow_redirects=False)
@@ -95,8 +95,8 @@ class Login:
 
 
 def test():
-    username = '18151536'
-    password = ''
+    username = input()
+    password = input()
     login = Login(username, password)
     cookie = login.cookie
     print(cookie)
